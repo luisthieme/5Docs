@@ -1,13 +1,5 @@
-import { HashtagIcon } from "@heroicons/react/20/solid";
+import { ChevronRightIcon, HashtagIcon } from "@heroicons/react/20/solid";
 import type { MDXComponents } from "mdx/types";
-// import {
-//   Table,
-//   TableHeader,
-//   TableBody,
-//   TableColumn,
-//   TableRow,
-//   TableCell,
-// } from "@nextui-org/react";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -35,15 +27,28 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <strong className="text-black">{children}</strong>
     ),
 
+    code: ({ children }) => (
+      <code className="bg-gray-200 border py-[2px] px-[3px] mx-[1px] border-gray-300 rounded-lg shadow">
+        {children}
+      </code>
+    ),
+
+    li: ({ children }) => (
+      <li className="flex">
+        {" "}
+        <ChevronRightIcon className="w-6 h-6 text-5minds-orange" /> {children}
+      </li>
+    ),
+
     // Table
     table: ({ children }) => (
-      <table className="min-w-full max-divide-y mb-4 divide-gray-300 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+      <table className="min-w-full max-divide-y mb-4 divide-gray-300 overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
         {children}
       </table>
     ),
     thead: ({ children }) => <thead className="bg-gray-50">{children}</thead>,
     th: ({ children }) => (
-      <th className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+      <th className="py-3.5 pl-2 pr-2 sm:pr-3 text-left text-xs sm:text-sm font-semibold text-gray-900 sm:pl-6">
         {children}
       </th>
     ),
@@ -51,15 +56,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <tbody className="divide-y divide-gray-200 bg-white">{children}</tbody>
     ),
     td: ({ children }) => (
-      <td className="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+      <td className="py-4 pl-2 pr-2 sm:pr-3 text-xs sm:text-sm font-medium text-gray-900 sm:pl-6">
         {children}
       </td>
     ),
     tr: ({ children }) => <tr className="max-w-screen-lg">{children}</tr>,
-    // table: ({ children }) => <Table>{children as any}</Table>,
-    // thead: ({ children }) => <TableHeader>{children as any}</TableHeader>,
-    // th: ({ children }) => <TableColumn>{children as any}</TableColumn>,
-    // tbody: ({ children }) => <TableBody>{children as any}</TableBody>,
 
     ...components,
   };
