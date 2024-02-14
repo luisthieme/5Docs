@@ -9,19 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@algolia/autocomplete-core": "^1.16.0",
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.0",
+    "@nextui-org/react": "^2.2.9",
+    "@sindresorhus/slugify": "^2.2.1",
+    "@types/mdx": "^2.0.11",
+    "clsx": "^2.1.0",
+    "flexsearch": "^0.7.43",
+    "framer-motion": "^11.0.3",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-highlight-words": "^0.20.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "simple-functional-loader": "^1.2.1",
+    "terser-webpack-plugin": "^5.3.10",
+    "unist-util-filter": "^5.0.1",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-highlight-words": "^0.16.7",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "typescript": "^5"
   }
 }
