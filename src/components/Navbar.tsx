@@ -1,6 +1,8 @@
 "use client";
 
 import { Fragment } from "react";
+import Image from "next/image";
+import ProcessCube from "../../public/images/ProcessCube_Logo.svg";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   ArrowDownIcon,
@@ -12,7 +14,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Button,
-  Image,
   Modal,
   ModalBody,
   ModalContent,
@@ -127,10 +128,7 @@ export default function Navbar() {
               <div className="flex px-2 lg:px-0">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
-                    <Image
-                      src="./images/ProcessCube_Logo.svg"
-                      radius="none"
-                      loading="eager"></Image>
+                    <Image alt="5Minds" src={ProcessCube}></Image>
                     {/* <img src="./images/ProcessCube_Logo.svg"></img> */}
                   </Link>
                 </div>
@@ -140,7 +138,7 @@ export default function Navbar() {
                       <Tooltip
                         content={getToolTipContent(item)}
                         size="lg"
-                        placement="bottom-start"
+                        placement="bottom"
                         shadow="lg"
                         radius="sm"
                         key={item.href}>
@@ -209,7 +207,7 @@ export default function Navbar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-4 flex-shrink-0">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-5minds-orange focus:ring-offset-2">
+                    <Menu.Button className="relative flex rounded-full bg-white text-sm focus:outline-none">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <UserCircleIcon className="h-7 w-7 text-gray-400 hover:text-gray-900" />

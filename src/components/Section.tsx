@@ -15,14 +15,14 @@ export default function Section({ section }: { section: SectionType }) {
   }
 
   return (
-    <div className="w-fit pl-0 ml-2 pb-0 border-l border-gray-300 sm:border-gray-200">
+    <div className="w-fit pl-0 ml-3 pb-0 border-l border-gray-300 sm:border-gray-200">
       <div className="flex">
         <Link
           href={section.link}
           onClick={() => setShowSubSections(true)}
-          className={`text-md mr-1 pl-2 py-2 sm:py-1 transition-all duration-[400ms] ${
+          className={`sm:text-lg mr-1 pl-2 py-2 sm:py-1 transition-all duration-[400ms] ${
             currentPath === section.link
-              ? "text-5minds-orange hover:text-5minds-orange-light pl-3 drop-shadow"
+              ? "text-5minds-orange hover:text-5minds-orange-light pl-3 "
               : ""
           }`}>
           {section.name}

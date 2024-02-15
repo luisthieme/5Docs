@@ -1,5 +1,7 @@
 import { ChevronRightIcon, HashtagIcon } from "@heroicons/react/20/solid";
 import type { MDXComponents } from "mdx/types";
+// import { Montserrat } from "next/font/google";
+// const montserrat = Montserrat({ subsets: ["latin"] });
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -7,8 +9,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h1: ({ children }) => (
       <h1 className="text-3xl w-fit mx-auto mb-4 pb-2 font-bold">{children}</h1>
     ),
-    h2: ({ children }) => (
-      <h2 className="text-2xl flex mt-6 mb-4 group border-b border-gray-200 font-semibold">
+    h2: ({ id, children }) => (
+      <h2
+        id={id}
+        className="text-2xl flex mt-6 mb-4 group border-b border-gray-200 font-bold">
         {children}{" "}
         <HashtagIcon className="h-6 w-6 text-gray-200 my-auto ml-1 hidden group-hover:block hover:text-gray-400 transition-all" />
       </h2>

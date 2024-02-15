@@ -12,7 +12,7 @@ export default function Footer() {
           <ChevronLeftIcon className="h-5 w-5 text-gray-600" />
           Previous
         </Link>
-        <p className="text-sm mt-2 text-gray-600">
+        <p className="text-xs sm:text-sm mt-2 text-gray-600 text-center">
           © Copyright 2024. All rights reserved.
         </p>
         <Link

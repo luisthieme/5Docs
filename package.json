@@ -25,6 +25,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-highlight-words": "^0.20.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "simple-functional-loader": "^1.2.1",

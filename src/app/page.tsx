@@ -8,7 +8,7 @@ import {
   Image,
 } from "@nextui-org/react";
 
-export default function Page() {
+export default async function Page() {
   return (
     <div>
       <div className="max-w-[1400px] w-fit mx-auto">
@@ -24,7 +24,7 @@ export default function Page() {
           radius="full">
           Starte Jetzt! <ArrowRightIcon className="text-white h-4 w-4" />
         </Button>
-        <div className="max-w-[1400px] gap-2 grid grid-cols-12 grid-rows-4 px-8 rounded-xl mx-auto mt-10">
+        <div className="max-w-[1400px] gap-2 grid grid-cols-12 grid-rows-5 px-8 rounded-xl mx-auto mt-10">
           <Card
             isFooterBlurred
             className="w-full h-[400px] col-span-12 sm:col-span-7">
@@ -77,35 +77,62 @@ export default function Page() {
               src="./images/test-code.png"
             />
           </Card>
-          <Card className="col-span-12 sm:col-span-4 h-[400px]">
+          <Card className="col-span-12 sm:col-span-3 h-[400px]">
             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-              <p className="text-tiny text-black/60 uppercase font-bold">
+              <p className="text-tiny text-white/60 uppercase font-bold">
                 Sicherheit beginnt hier.
               </p>
-              <h4 className="text-black font-medium text-large">
+              <h4 className="text-white font-medium text-large">
                 5Minds Authority
               </h4>
             </CardHeader>
             <Image
+              isZoomed
               removeWrapper
               alt="Card background"
               className="z-0 w-full h-full object-cover"
-              src="/images/card-example-3.jpeg"
+              src="/images/pattern-blue.svg"
             />
           </Card>
-          <Card className="col-span-12 sm:col-span-4 h-[400px]">
+
+          <Card className="col-span-12 sm:col-span-6 h-[400px]">
             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-              <p className="text-tiny text-black/60 uppercase font-bold">
+              <p className="text-tiny text-white/60 uppercase font-bold">
                 Das Herzstück deiner Lösung.
               </p>
-              <h4 className="text-black font-medium text-large">
+              <h4 className="text-white font-medium text-large">
                 5Minds Engine
               </h4>
             </CardHeader>
+            <Image
+              removeWrapper
+              isZoomed
+              alt="Card example background"
+              className="z-0 w-full h-full scale-[1.4] pt-6 -translate-y-6 object-cover"
+              src="./images/pattern.svg"
+            />
+          </Card>
+
+          <Card className="col-span-12 sm:col-span-3 h-[400px]">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+              <p className="text-tiny text-white/60 uppercase font-bold">
+                All-in-One Full Stack Lösungen.
+              </p>
+              <h4 className="text-white font-medium text-large">
+                5Minds App-SDK
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              isZoomed
+              alt="Card example background"
+              className="z-0 w-full h-full scale-[1.4] pt-6 -translate-y-6 object-cover"
+              src="./images/pattern-green.svg"
+            />
           </Card>
           <Card
             isFooterBlurred
-            className="w-full h-[400px] col-span-12 sm:col-span-4">
+            className="w-full h-[400px] col-span-12 sm:col-span-6">
             <CardHeader className="absolute z-10 top-1 flex-col items-start">
               <p className="text-tiny text-white/80 uppercase font-bold">
                 Die perfekte Entwicklungsumgebung.
@@ -116,13 +143,13 @@ export default function Page() {
               removeWrapper
               isZoomed
               alt="Card example background"
-              className="z-0 w-full h-full scale-[1.4] pt-6 -translate-y-6 object-cover"
+              className="z-0 w-full h-full  scale-[1.4] sm:scale-[1.15] pt-6 -translate-y-6 object-cover"
               src="./images/Studio-Icon.svg"
             />
             <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
               <div>
-                <p className="text-black text-tiny">Version:</p>
-                <p className="text-black text-tiny">1.15.2</p>
+                <p className="text-white text-tiny">Version:</p>
+                <p className="text-white text-tiny">1.15.2</p>
               </div>
               <Button
                 className="text-tiny bg-5minds-orange text-white"
@@ -134,7 +161,38 @@ export default function Page() {
           </Card>
           <Card
             isFooterBlurred
-            className="w-full h-[800px] col-span-12 row-span-2">
+            className="w-full h-[400px] col-span-12 sm:col-span-6">
+            <CardHeader className="absolute z-10 top-1 flex-col items-start">
+              <p className="text-tiny text-white/80 uppercase font-bold">
+                Die neuesten Features
+              </p>
+              <h4 className="text-white font-medium text-2xl">
+                5Minds Insiders-Studio
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              isZoomed
+              alt="Card example background"
+              className="z-0 w-full h-full scale-[1.4] sm:scale-[1.15] pt-6 -translate-y-6 object-cover"
+              src="./images/Studio-Insiders-Icon.svg"
+            />
+            <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+              <div>
+                <p className="text-white text-tiny">Version:</p>
+                <p className="text-white text-tiny">1.16.0</p>
+              </div>
+              <Button
+                className="text-tiny bg-5minds-orange text-white"
+                radius="full"
+                size="sm">
+                Download
+              </Button>
+            </CardFooter>
+          </Card>
+          <Card
+            isFooterBlurred
+            className="w-full h-[800px] hidden sm:block col-span-12 row-span-2">
             <CardHeader className="absolute z-10 top-1 flex-col items-start">
               <p className="text-tiny text-black/50 uppercase font-bold">
                 Das Zusammenspiel aller ProcessCube-Produkte
@@ -143,13 +201,23 @@ export default function Page() {
             </CardHeader>
             <Image
               removeWrapper
-              alt="Card example background"
-              className="z-0 w-full h-full scale-100 -translate-y-6 object-cover"
+              alt="Architektur"
+              className="z-0 w-full h-full scale-150 mt-10 ml-10 -translate-y-6 object-cover"
               src="./images/Architecture-light.png"
             />
           </Card>
         </div>
       </div>
+      <div className="h-40 sm:h-60 mt-20">
+        <div className="flex">
+          <div className=" h-[1px] w-[50%] bg-gradient-to-r from-white to-gray-500 via-gray-200" />
+          <div className=" h-[1px] w-[50%] bg-gradient-to-r to-white from-gray-500 via-gray-200" />
+        </div>
+        <p className="w-fit h-fit mt-[68px] sm:mt-[7rem] mx-auto text-gray-500">
+          Copyright © 2024 5Minds. All rights reserved
+        </p>
+      </div>
+      <div></div>
     </div>
   );
 }
