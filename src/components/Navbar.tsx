@@ -25,6 +25,7 @@ import {
 import { MobileSearch, Search } from "./Search";
 import { ToolTipContent } from "@/lib/ToolTipContent";
 import Sidebar from "./Sidebar";
+import { ThemeToggle } from "./ThemeToggle";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -196,13 +197,7 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="hidden lg:ml-4 lg:flex lg:items-center">
-                <button
-                  type="button"
-                  className="relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-5minds-orange focus:ring-offset-2">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                <ThemeToggle />
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-4 flex-shrink-0">
