@@ -2,7 +2,6 @@
 
 import { Heading } from "@/lib/Heading";
 import { PageSection } from "@/lib/PageSection";
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -18,15 +17,14 @@ export default function PageContent({
   const pathname = usePathname();
   const currentSection = allSections[pathname];
   return (
-    <div className="bg-gray-50 pl-2 py-2 h-fit border-b border-gradient-to-r">
-      <h1 className="text-gray-500">On this page:</h1>
+    <div className="pl-4 py-4 hidden sm:block">
+      <h1 className="text-gray-500 font-semibold">On this page:</h1>
       {currentSection.map((section: PageSection) => {
         return (
           <div key={section.id}>
             <Link
               href={`#${section.id}`}
-              className="p-1 hover:text-5minds-orange text-gray-400 text-sm flex">
-              <ChevronRightIcon className="h-5 w-5 text-5minds-orange" />
+              className="p-1 hover:text-5minds-orange text-gray-400 text-sm flex transition-all">
               {section.title}
             </Link>
           </div>
