@@ -23,7 +23,7 @@ export default async function Layout({
       <div className="hidden sm:block">
         <Sidebar />
       </div>
-      <div className="border-r border-b p-3 col-span-4 overflow-y-auto h-screen-navbar shadow-lg overflow-hidden">
+      <div className="border-r border-b p-3 col-span-4 overflow-y-auto h-screen-navbar shadow-lg overflow-hidden dark:border-gray-700 dark:border-b-0">
         {children}
         <Footer />
       </div>

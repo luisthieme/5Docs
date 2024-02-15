@@ -15,7 +15,7 @@ export default function Section({ section }: { section: SectionType }) {
   }
 
   return (
-    <div className="w-fit pl-0 ml-3 pb-0 border-l border-gray-300 sm:border-gray-200">
+    <div className="w-fit pl-0 ml-3 pb-0 border-l border-gray-300 dark:border-gray-600 sm:border-gray-200">
       <div className="flex">
         <Link
           href={section.link}
@@ -23,19 +23,19 @@ export default function Section({ section }: { section: SectionType }) {
           className={`sm:text-lg mr-1 pl-2 py-2 sm:py-1 transition-all duration-[400ms] ${
             currentPath === section.link
               ? "text-5minds-orange hover:text-5minds-orange-light pl-3 "
-              : ""
+              : "dark:text-gray-300"
           }`}>
           {section.name}
         </Link>
         {section.sub_sections.length != 0 ? (
           showSubSections ? (
             <ChevronDownIcon
-              className="h-5 w-5 my-auto rounded-3xl border border-gray-700 hover:bg-gray-100"
+              className="h-5 w-5 my-auto rounded-3xl border border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900"
               onClick={() => toggleSections()}
             />
           ) : (
             <ChevronRightIcon
-              className="h-5 w-5 my-auto rounded-3xl border hover:bg-gray-200"
+              className="h-5 w-5 my-auto rounded-3xl border hover:bg-gray-200 dark:hover:bg-gray-800 dark:border-gray-300"
               onClick={() => toggleSections()}
             />
           )

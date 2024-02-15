@@ -12,10 +12,10 @@ export default async function Page() {
   return (
     <div>
       <div className="max-w-[1400px] w-fit mx-auto">
-        <h1 className="w-fit p-2 ml-5 mt-10 bg-gradient-to-r to-[#a0a5a9] from-[#3d5266] bg-clip-text text-transparent text-7xl sm:text-8xl font-extrabold">
+        <h1 className="w-fit p-2 ml-5 mt-10 bg-gradient-to-r to-[#a0a5a9] from-[#3d5266]  dark:from-[#e8e4f6] dark:to-[#687786] bg-clip-text text-transparent text-7xl sm:text-8xl font-extrabold">
           Software für immer!
         </h1>
-        <h3 className="font-bold text-md sm:text-lg text-gray-500 ml-8 mt-2">
+        <h3 className="font-bold text-md sm:text-lg text-gray-500 dark:text-gray-200 ml-8 mt-2">
           Übersichtliche, effiziente und prozessbasierte Softwareentwicklung auf
           Fachebene.
         </h3>
@@ -43,11 +43,6 @@ export default async function Page() {
             />
             <CardFooter className="absolute bg-white/10 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
               <div className="flex flex-grow gap-2 items-center">
-                <Image
-                  alt="Breathing app icon"
-                  className="rounded-full w-10 h-11 bg-black"
-                  src="/images/breathing-app-icon.jpeg"
-                />
                 <div className="flex flex-col">
                   <p className="text-tiny text-white/60">
                     Präzise Geschäftsprozessmodellierung auf Grundlage des
@@ -161,7 +156,7 @@ export default async function Page() {
           </Card>
           <Card
             isFooterBlurred
-            className="w-full h-[400px] col-span-12 sm:col-span-6">
+            className="w-full h-[400px] dark:border-1 dark:border-gray-800 col-span-12 sm:col-span-6">
             <CardHeader className="absolute z-10 top-1 flex-col items-start">
               <p className="text-tiny text-white/80 uppercase font-bold">
                 Die neuesten Features
@@ -209,11 +204,15 @@ export default async function Page() {
         </div>
       </div>
       <div className="h-40 sm:h-60 mt-20">
-        <div className="flex">
+        <div className="flex dark:hidden">
           <div className=" h-[1px] w-[50%] bg-gradient-to-r from-white to-gray-500 via-gray-200" />
           <div className=" h-[1px] w-[50%] bg-gradient-to-r to-white from-gray-500 via-gray-200" />
         </div>
-        <p className="w-fit h-fit mt-[68px] sm:mt-[7rem] mx-auto text-gray-500">
+        <div className="dark:flex hidden">
+          <div className=" h-[1px] w-[50%] bg-gradient-to-r to-white from-black via-gray-300" />
+          <div className=" h-[1px] w-[50%] bg-gradient-to-r from-white to-black via-gray-300" />
+        </div>
+        <p className="w-fit h-fit mt-[68px] sm:mt-[7rem] mx-auto text-gray-500 dark:text-gray-300">
           Copyright © 2024 5Minds. All rights reserved
         </p>
       </div>

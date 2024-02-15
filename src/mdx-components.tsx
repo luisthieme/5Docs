@@ -7,32 +7,35 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Headings
     h1: ({ children }) => (
-      <h1 className="text-3xl w-fit mx-auto mb-4 pb-2 font-bold">{children}</h1>
+      <h1 className="text-3xl w-fit mx-auto mb-4 pb-2 font-bold dark:text-white">
+        {children}
+      </h1>
     ),
     h2: ({ id, children }) => (
       <h2
         id={id}
-        className="text-2xl flex mt-6 mb-4 group border-b border-gray-200 font-bold">
+        className="text-2xl flex mt-6 mb-4 pb-2 group border-b border-5minds-orange dark:border-5minds-orange dark:text-gray-50 font-bold">
         {children}{" "}
-        <HashtagIcon className="h-6 w-6 text-gray-200 my-auto ml-1 hidden group-hover:block hover:text-gray-400 transition-all" />
+        <HashtagIcon className="h-6 w-6 text-gray-200 dark:text-gray-400 my-auto ml-1 hidden group-hover:block hover:text-gray-400 dark:hover:text-gray-200 transition-all" />
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl flex items-center font-medium hover:pl-1 mt-2 mb-3 hover:border-l-2 border-transparent hover:border-gray-300 transition-all duration-200">
+      <h3 className="text-xl flex items-center font-medium dark:text-gray-100 pl-1 mt-2 mb-3 border-l-2 border-5minds-orange transition-all duration-200">
         {children}{" "}
-        <HashtagIcon className="h-5 w-5 text-gray-200 my-auto ml-1 mr-2 hover:text-gray-400 transition-all" />
-        <hr className="text-gray-300 flex-grow" />
+        <div className="ml-2 flex-grow border-b border-gray-300 dark:border-gray-600"></div>
       </h3>
     ),
 
-    p: ({ children }) => <p className="text-gray-700 py-1">{children}</p>,
+    p: ({ children }) => (
+      <p className="text-gray-700 dark:text-gray-300 py-1">{children}</p>
+    ),
 
     strong: ({ children }) => (
-      <strong className="text-black">{children}</strong>
+      <strong className="text-black dark:text-gray-100">{children}</strong>
     ),
 
     code: ({ children }) => (
-      <code className="bg-gray-200 border py-[2px] px-[3px] mx-[1px] border-gray-300 rounded-lg shadow">
+      <code className="bg-gray-200 dark:bg-gray-700 dark:text-gray-100 border py-[2px] px-[3px] mx-[1px] border-gray-300 dark:border-gray-600 rounded-lg shadow">
         {children}
       </code>
     ),
@@ -46,21 +49,25 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // Table
     table: ({ children }) => (
-      <table className="min-w-full max-divide-y mb-4 divide-gray-300 overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
+      <table className="min-w-full max-divide-y mb-4 divide-gray-600 overflow-hidden shadow ring-1 ring-black dark:ring-gray-700 ring-opacity-5 rounded-lg">
         {children}
       </table>
     ),
-    thead: ({ children }) => <thead className="bg-gray-50">{children}</thead>,
+    thead: ({ children }) => (
+      <thead className="bg-gray-200 dark:bg-zinc-900">{children}</thead>
+    ),
     th: ({ children }) => (
-      <th className="py-3.5 pl-2 pr-2 sm:pr-3 text-left text-xs sm:text-sm font-semibold text-gray-900 sm:pl-6">
+      <th className="py-3.5 pl-2 pr-2 sm:pr-3 text-left text-xs sm:text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">
         {children}
       </th>
     ),
     tbody: ({ children }) => (
-      <tbody className="divide-y divide-gray-200 bg-white">{children}</tbody>
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-black">
+        {children}
+      </tbody>
     ),
     td: ({ children }) => (
-      <td className="py-4 pl-2 pr-2 sm:pr-3 text-xs sm:text-sm font-medium text-gray-900 sm:pl-6">
+      <td className="py-4 pl-2 pr-2 sm:pr-3 text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-200 sm:pl-6">
         {children}
       </td>
     ),
