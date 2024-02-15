@@ -12,7 +12,7 @@ export default function Footer() {
           <ChevronLeftIcon className="h-5 w-5 text-gray-600" />
           Previous
         </Link>
-        <p className="text-xs sm:text-sm mt-2 text-gray-600 text-center">
+        <p className="text-xs sm:text-sm mt-2 text-gray-600 text-center hidden sm:block">
           © Copyright 2024. All rights reserved.
         </p>
         <Link
@@ -22,6 +22,9 @@ export default function Footer() {
           <ChevronRightIcon className="h-5 w-5 text-gray-600" />
         </Link>
       </div>
+      <p className="text-xs sm:text-sm mt-6 text-gray-600 text-center sm:hidden block">
+        © Copyright 2024. All rights reserved.
+      </p>
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function PageContent({
   const pathname = usePathname();
   const currentSection = allSections[pathname];
   return (
-    <div className="pl-4 py-4 hidden sm:block">
+    <div className="pl-4 py-4 hidden sm:block h-fit border-b">
       <h1 className="text-gray-500 font-semibold">On this page:</h1>
       {currentSection.map((section: PageSection) => {
         return (
