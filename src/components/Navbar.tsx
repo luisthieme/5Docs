@@ -25,6 +25,7 @@ import {
 import { MobileSearch, Search } from "./Search";
 import { ToolTipContent } from "@/lib/ToolTipContent";
 import Sidebar from "./Sidebar";
+import { ThemeToggle } from "./ThemeToggle";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -106,7 +107,7 @@ export default function Navbar() {
             return (
               <li key={content.link}>
                 <Link
-                  className="text-sm text-gray-500 hover:text-5minds-orange transition-all duration-100"
+                  className="text-sm text-gray-500 dark:text-gray-200 dark:hover:text-5minds-orange hover:text-5minds-orange transition-all duration-100"
                   href={content.link}>
                   {content.name}
                 </Link>
@@ -120,7 +121,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-white/80 shadow col-span-6 mb-[2px] fixed z-50 w-full backdrop-filter backdrop-blur-lg">
+      className="bg-white/80 dark:bg-transparent dark:border-b dark:border-gray-600 shadow col-span-6 mb-[2px] fixed z-50 w-full backdrop-filter backdrop-blur-lg">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-8xl px-2 sm:px-4 lg:px-6 max-w-screen-2xl">
@@ -129,7 +130,6 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
                     <Image alt="5Minds" src={ProcessCube}></Image>
-                    {/* <img src="./images/ProcessCube_Logo.svg"></img> */}
                   </Link>
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
@@ -149,7 +149,7 @@ export default function Navbar() {
                             "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
                             item.isActive
                               ? "border-5minds-orange text-5minds-orange"
-                              : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 transition-all"
+                              : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:dark:border-gray-100 dark:hover:text-white hover:text-gray-700 transition-all"
                           )}>
                           {item.text} <ChevronDownIcon className="h-5 w-5" />
                         </Link>
@@ -162,7 +162,7 @@ export default function Navbar() {
                           "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
                           item.isActive
                             ? "border-5minds-orange text-5minds-orange"
-                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 transition-all"
+                            : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:dark:border-gray-100 dark:hover:text-white hover:text-gray-700 transition-all"
                         )}>
                         {item.text}
                       </Link>
@@ -196,21 +196,15 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="hidden lg:ml-4 lg:flex lg:items-center">
-                <button
-                  type="button"
-                  className="relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-5minds-orange focus:ring-offset-2">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                <ThemeToggle />
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-4 flex-shrink-0">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-white text-sm focus:outline-none">
+                    <Menu.Button className="relative flex rounded-full text-sm focus:outline-none">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <UserCircleIcon className="h-7 w-7 text-gray-400 hover:text-gray-900" />
+                      <UserCircleIcon className="h-7 w-7 text-gray-300 hover:text-gray-900" />
                     </Menu.Button>
                   </div>
                   <Transition

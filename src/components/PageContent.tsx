@@ -17,14 +17,16 @@ export default function PageContent({
   const pathname = usePathname();
   const currentSection = allSections[pathname];
   return (
-    <div className="pl-4 py-4 hidden sm:block h-fit border-b">
-      <h1 className="text-gray-500 font-semibold">On this page:</h1>
+    <div className="pl-4 py-4 hidden sm:block h-fit border-b dark:border-gray-700">
+      <h1 className="text-gray-500 dark:text-white font-semibold">
+        On this page:
+      </h1>
       {currentSection.map((section: PageSection) => {
         return (
           <div key={section.id}>
             <Link
               href={`#${section.id}`}
-              className="p-1 hover:text-5minds-orange text-gray-400 text-sm flex transition-all">
+              className="p-1 hover:text-5minds-orange dark:hover:text-5minds-orange text-gray-400 dark:text-gray-300 text-sm flex transition-all">
               {section.title}
             </Link>
           </div>
