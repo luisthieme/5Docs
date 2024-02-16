@@ -9,10 +9,11 @@ export default function CubeCanvas() {
   return (
     <div className="h-[350px] w-[400px] hidden sm:block">
       <Canvas>
-        <OrbitControls enableZoom={false} enablePan={false} />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[1, 1, 1]} intensity={2} />
-        <directionalLight position={[-1, -1, -1]} intensity={2} />
+        {/* <OrbitControls enableZoom={false} enablePan={false} /> */}
+        <ambientLight intensity={1.25} />
+        {/* <directionalLight position={[1, 1, 1]} intensity={2} />
+        <directionalLight position={[-1, -1, -1]} intensity={2} /> */}
+        <spotLight position={[-1.25, 0.5, 3]} intensity={8} distance={4} />
         <Cube />
       </Canvas>
     </div>
