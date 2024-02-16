@@ -1,3 +1,4 @@
+import CubeCanvas from "@/components/CubeCanvas";
 import { ArrowRightIcon, CpuChipIcon } from "@heroicons/react/20/solid";
 import {
   Card,
@@ -12,18 +13,25 @@ export default async function Page() {
   return (
     <div>
       <div className="max-w-[1400px] w-fit mx-auto">
-        <h1 className="w-fit p-2 ml-5 mt-10 bg-gradient-to-r to-[#a0a5a9] from-[#3d5266]  dark:from-[#e8e4f6] dark:to-[#687786] bg-clip-text text-transparent text-7xl sm:text-8xl font-extrabold">
-          Software für immer!
-        </h1>
-        <h3 className="font-bold text-md sm:text-lg text-gray-500 dark:text-gray-200 ml-8 mt-2">
-          Übersichtliche, effiziente und prozessbasierte Softwareentwicklung auf
-          Fachebene.
-        </h3>
-        <Button
-          className="bg-5minds-orange shadow-lg text-2xl text-white p-7 ml-8 mt-8"
-          radius="full">
-          Starte Jetzt! <ArrowRightIcon className="text-white h-4 w-4" />
-        </Button>
+        <div className="flex">
+          <div className="w-fit">
+            <h1 className="w-fit sm:whitespace-nowrap p-2 ml-5 mt-10 bg-gradient-to-r to-[#a0a5a9] from-[#3d5266]  dark:from-[#e8e4f6] dark:to-[#687786] bg-clip-text text-transparent text-7xl sm:text-8xl font-extrabold">
+              Software für immer!
+            </h1>
+            <h3 className="font-bold text-md sm:text-lg text-gray-500 dark:text-gray-200 ml-8 mt-2">
+              Übersichtliche, effiziente und prozessbasierte Softwareentwicklung
+              auf Fachebene.
+            </h3>
+            <Button
+              className="bg-5minds-orange shadow-lg text-2xl text-white p-7 ml-8 mt-8"
+              radius="full">
+              Starte Jetzt! <ArrowRightIcon className="text-white h-4 w-4" />
+            </Button>
+          </div>
+          <div className="w-full">
+            <CubeCanvas />
+          </div>
+        </div>
         <div className="max-w-[1400px] gap-2 grid grid-cols-12 grid-rows-5 px-8 rounded-xl mx-auto mt-10">
           <Card
             isFooterBlurred
@@ -216,7 +224,6 @@ export default async function Page() {
           Copyright © 2024 5Minds. All rights reserved
         </p>
       </div>
-      <div></div>
     </div>
   );
 }
