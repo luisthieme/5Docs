@@ -20,7 +20,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl flex items-center font-medium dark:text-gray-100 pl-1 mt-2 mb-3 border-l-2 border-5minds-orange transition-all duration-200">
+      <h3 className="text-xl flex items-center font-medium dark:text-gray-100 pl-2 mt-2 mb-3 border-l-2 border-5minds-orange transition-all duration-200">
         {children}{" "}
         <div className="ml-2 flex-grow border-b border-gray-300 dark:border-gray-600"></div>
       </h3>
