@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!overflow-y-scroll !p-0">
-      <body className="">
+      <body>
         <Providers>
           <NextUIProvider>
             <div>
